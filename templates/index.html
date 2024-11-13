@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Personnel Table</title>
+    <link rel="stylesheet" href="/static/styles.css">
+    <script src="/static/script.js" defer></script>
+</head>
+<body>
+    <h2>Personnel Table</h2>
+    <table border="1" id="personnelTable">
+        <tr>
+            <th>Name</th>
+            <th>Age</th>
+            <th>Occupation</th>
+        </tr>
+        {% for person in data %}
+        <tr onclick="createPerson('{{ person.Name }}', '{{ person.Age }}', '{{ person.Occupation }}')">
+            <td>{{ person.Name }}</td>
+            <td>{{ person.Age }}</td>
+            <td>{{ person.Occupation }}</td>
+        </tr>
+        {% endfor %}
+    </table>
+</body>
+</html>
+
